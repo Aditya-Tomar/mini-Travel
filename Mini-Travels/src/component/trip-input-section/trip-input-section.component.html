@@ -1,0 +1,37 @@
+<ng-container>
+    <div class="container-wrapper">
+
+            <div class="review-container">
+                <span>
+                    <app-rating-tag></app-rating-tag>
+                </span>
+            </div>
+
+            <div class="main-container">
+                    <div class="wrap">
+                        <div class="text">{{ text }}</div>
+                        <div class="subText">{{ subText }}</div>
+                        <div class="dropdowns-container">
+                            <div class="hide-element destinations">
+                                <app-dropdown-bar buttonName="Destination" [data]="cities"></app-dropdown-bar>
+                            </div>
+                            <div class="hide-element categories">
+                                <app-dropdown-bar buttonName="Trip Category" [data]="categories"></app-dropdown-bar>
+                            </div>
+                            <div class="hide-element people-input">
+                                <input (keydown)="isNumber($event)" type="text" placeholder="Number of People">
+                            </div>
+                            <div class="hide-element">
+                                <input placeholder="Budget per person">
+                            </div>
+                            <button class="create-trip-button" (click)="submitQuery()">{{ buttonText }}</button>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img class="img" src="https://res.cloudinary.com/enchanting/f_auto,q_100,w_1440,h_650,c_fill/et-web/2022/11/Enchanting-Travels-Africa-Namibia-13-e1669288114127.jpg">
+            </div>
+
+    </div>
+</ng-container>

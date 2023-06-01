@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Font Awesome
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/regular.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+
+// MDB SCSS
+@import "mdb-angular-ui-kit/assets/scss/mdb.scss";
+
+.color-black {
+    color:black
+}
+
+.create-trip-button {
+    width: fit-content;
+    height: 6vh;
+    background: #1db8ff;
+    border: 0;
+    border-radius: 2px;
+    margin: 0px 20px 0px 20px;
+    padding: 5px 45px 5px 45px;
+    letter-spacing: 2px;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: sans-serif;
+    cursor: pointer;
+    z-index: 5;
+}

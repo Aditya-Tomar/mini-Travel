@@ -1,0 +1,26 @@
+<header>
+    <div class="main-header">
+        <div class="header-title" (click)="onHeaderTitleClicked()">
+            <svg height="60" width="120">
+                <text x="45" y="25" >{{ headerSubTitle }}
+                  <tspan x="10" y="45" style="fill:rgb(93,204,255); font-size: 35;">{{ headerTitle }}</tspan>
+                </text>
+            </svg>
+        </div>
+
+        <div class="horizontal-line-container">
+            <hr class="horizontal-line-height">
+        </div>
+
+        <div class="header-text">
+            {{ headerText }}
+        </div>
+        <div class="header-contact-no">
+            123 456 789
+        </div>
+        <button class="header-button"
+        (click)="onButtonClicked()">
+            {{ buttonText }}
+        </button>
+    </div>
+</header>
