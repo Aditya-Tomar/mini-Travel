@@ -34,7 +34,6 @@ export class TripInputSectionComponent {
   constructor( private _fb: FormBuilder){}
 
   public isNumber($event: any): boolean{
-    console.log($event);
     if($event.key >= 0 && $event.key <= 9){
       return true;
     }
@@ -45,9 +44,8 @@ export class TripInputSectionComponent {
   }
 
   public submitQuery(): void {
-    this.isLoading = true;
-    this.onSubmitClicked.emit(this.form.value);
-    this.form.reset();
+      this.onSubmitClicked.emit(this.form.value);
+      this.form.reset();
   }
 
 }

@@ -51,6 +51,7 @@ export class TripPlannerComponent implements OnInit {
   }
 
   public onSubmitQuery( $event: any): void {
+    console.log("event",$event);
     let { destination , people, budget, category: categoryData }: {
       destination: {default: boolean, name: string},
       people: number,
@@ -58,14 +59,18 @@ export class TripPlannerComponent implements OnInit {
       category: string} = $event;
     const destinationData = destination?.name;
     this.isLoading = true;
-    this._queryService.setQuery({destinationData, people, budget, categoryData}).subscribe( () => {
-      alert("Query Submitted");
-      this.isLoading=false;
-    },
-    (err) => {
-      console.log("Error Happend: Unable to save query", err);
-      this.isLoading=false;
-    });
+    // using settimeout to show loader effect only.
+    setTimeout(() => { 
+
+      this._queryService.setQuery({destinationData, people, budget, categoryData}).subscribe( () => {
+        this.isLoading=false;
+        alert("Query Submitted");
+      },
+      (err) => {
+        this.isLoading=false;
+        console.log("Error Happend: Unable to save query", err);
+      });
+    }, 100)
   }
 
   public routeToQueryList(): void{
