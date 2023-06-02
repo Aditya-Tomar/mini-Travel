@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 
 interface QueryBody { 
-    destinationData: string;
+    destinationData: {name: string};
     people: number;
     budget: number;
     categoryData: string;
@@ -36,7 +36,6 @@ export class QueriesService {
     }
 
     setQuery(body : QueryBody ): Observable<boolean>{
-        console.log(body, this.queries);
         this.queries["queries"].push(body);
         return of(true);
     }

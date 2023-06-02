@@ -51,13 +51,12 @@ export class TripPlannerComponent implements OnInit {
   }
 
   public onSubmitQuery( $event: any): void {
-    console.log("event",$event);
     let { destination , people, budget, category: categoryData }: {
       destination: {default: boolean, name: string},
       people: number,
       budget: number,
       category: string} = $event;
-    const destinationData = destination?.name;
+    const destinationData = {name: destination?.name};
     this.isLoading = true;
     // using settimeout to show loader effect only.
     setTimeout(() => { 
