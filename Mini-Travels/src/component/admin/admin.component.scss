@@ -1,0 +1,34 @@
+.container{
+    padding-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+}
+
+.header_col, td {
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px;
+    overflow-wrap: anywhere;
+}
+
+
+// #table-wrapper {
+//     position:relative;
+//   }
+//   #table-scroll {
+//     height:50vh;
+//     overflow:auto;  
+//     margin-top:20px;
+//   }
+
+//   #table-wrapper table thead {
+//     position:sticky;   
+//     top:0px;
+//     height:20px;
+//     border:2px solid black;
+//     z-index: 4;
+//     background-color: white;
+//   }

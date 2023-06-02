@@ -1,0 +1,30 @@
+.page-header {
+    height: fit-content;
+    padding: 2rem 20% 2rem 20%;
+    width: fit-content;
+    text-align: center;
+    background-color: rgba(220, 220, 220, 0.751);
+    border-bottom: 2px solid #d6d6d6;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    
+    .images-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        .image{
+            width: 40vh;
+            height: 30vh;
+            object-fit: cover;
+        }
+    }
+}

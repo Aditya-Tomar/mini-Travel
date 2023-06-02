@@ -1,0 +1,32 @@
+.dropdown-toggle {
+    padding: 10px 30px 10px 30px;
+
+}
+
+.dropdown-menu {
+    position: absolute;
+    max-height: 20vh;
+    overflow-y: auto;
+    border-radius: 2px;
+}
+
+.list-elem {
+    font-weight: 100;
+    padding: 5px;
+    margin-left: 5px;
+    border-bottom: 1px solid rgb(208, 208, 208);
+}
+
+.list-elem:hover {
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+
+.disable {
+    background:0;
+    font-weight: 600;
+}
+.disable:hover{
+    background: 0;
+    cursor: unset;
+}

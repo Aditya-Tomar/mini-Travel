@@ -1,23 +1,28 @@
 import { NgModule } from "@angular/core";
 import { TripInputSectionComponent } from './trip-input-section/trip-input-section.component';
-// import { TripPlannerComponent } from "./trip-planner/trip-planner.component";
+import { TripPlannerComponent } from "./trip-planner/trip-planner.component";
 import { SharedModule } from "src/shared/shared.module";
 import { PageDetailComponent } from './page-detail/page-detail.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
     declarations: [
-        // TripPlannerComponent,
+        TripPlannerComponent,
         TripInputSectionComponent,
-        // PageDetailComponent
+        PageDetailComponent,
+        AdminComponent
     ],
     providers: [],
     imports:[
         SharedModule,
+        ReactiveFormsModule
     ],
     exports:[
-        // TripPlannerComponent,
+        TripPlannerComponent,
         TripInputSectionComponent,
-        // PageDetailComponent,
+        PageDetailComponent,
+        AdminComponent
     ]
 })
 export class ComponentsModule {}

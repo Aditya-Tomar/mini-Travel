@@ -1,0 +1,16 @@
+
+<ng-container >
+    <div class="conatiner">
+        <app-trip-input-section 
+        [cities]="destinationsList" 
+        [categories]="categoriesList"
+        [isLoading]="isLoading"
+        (onSubmitClicked)="onSubmitQuery($event)"
+        ></app-trip-input-section>
+        <div class="queries">
+            <button (click)="routeToQueryList()">View Queries</button>
+        </div>
+        <app-page-detail></app-page-detail>
+    </div>
+    
+</ng-container>

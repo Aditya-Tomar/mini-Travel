@@ -11,21 +11,26 @@
                     <div class="wrap">
                         <div class="text">{{ text }}</div>
                         <div class="subText">{{ subText }}</div>
-                        <div class="dropdowns-container">
+                        <form class="dropdowns-container" [formGroup]="form">
                             <div class="hide-element destinations">
-                                <app-dropdown-bar buttonName="Destination" [data]="cities"></app-dropdown-bar>
+                                <app-dropdown-bar buttonName="Destination" [data]="cities" (onSelected)="destination.setValue($event)" ></app-dropdown-bar>
                             </div>
                             <div class="hide-element categories">
-                                <app-dropdown-bar buttonName="Trip Category" [data]="categories"></app-dropdown-bar>
+                                <app-dropdown-bar buttonName="Trip Category" [data]="categories" (onSelected)="category.setValue($event)"  ></app-dropdown-bar>
                             </div>
                             <div class="hide-element people-input">
-                                <input (keydown)="isNumber($event)" type="text" placeholder="Number of People">
+                                <input (keydown)="isNumber($event)" type="text" placeholder="Number of People" formControlName="people">
                             </div>
                             <div class="hide-element">
-                                <input placeholder="Budget per person">
+                                <input type="text" placeholder="Budget Per Person in Rs" formControlName="budget">
                             </div>
-                            <button class="create-trip-button" (click)="submitQuery()">{{ buttonText }}</button>
-                        </div>
+                            <button class="create-trip-button" (click)="submitQuery()">
+                                <span *ngIf="!isLoading">
+                                    {{ buttonText }}
+                                </span>
+                                <span *ngIf="isLoading" class="icon-spinner"></span>
+                            </button>
+                        </form>
                     </div>
             </div>
 

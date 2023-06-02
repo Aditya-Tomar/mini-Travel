@@ -1,0 +1,21 @@
+<div class="container">
+    <div *ngIf="!isLoading" id="table-wrapper" >
+        <div id="table-scroll">
+            <table>
+                <thead>
+                    <th class="header_col" *ngFor="let header of headerList">{{ header.name }}</th>
+                </thead>
+    
+                <tbody class="table-body">
+                    <tr class="header_row" *ngFor="let query of queries;  let i = index">
+                        <td>{{ i }}</td>
+                        <td>{{ query.destinationData?.name ?? "N/A" }}</td>
+                        <td>{{ query.categoryData?.name ?? "N/A" }}</td>
+                        <td>{{ query.people ?? "N/A" }}</td>
+                        <td>{{ query.budget ?? "N/A" }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

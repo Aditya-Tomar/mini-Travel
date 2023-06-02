@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-trip-input-section',
@@ -9,13 +10,28 @@ export class TripInputSectionComponent {
   
   @Input() public cities: any[] = [];
   @Input() public categories: any[] = [];
-  
-  @Output() onSubmitClicked: EventEmitter<any> = new EventEmitter();
+  @Input() form: FormGroup = this._fb.group({
+    destination: [],
+    category: [],
+    people: [],
+    budget: []
+  });
+  @Input() isLoading: boolean = false;
+
+  @Output() onSubmitClicked: EventEmitter<{destination: any, category: any, people: number, budget: number}> = new EventEmitter();
   public text: string = "We Care, So You Can Travel Carefree";
   public subText: string = "Let our experts plan your private, tailor-made and secure tour in 70+ inspiring destinations.";
   public buttonText: string = "Create My Trip Now";
 
-  constructor(){}
+  get destination (): FormControl {
+    return this.form.get("destination") as FormControl;
+  }
+
+  get category(): FormControl {
+    return this.form.get('category') as FormControl;
+  }
+
+  constructor( private _fb: FormBuilder){}
 
   public isNumber($event: any): boolean{
     console.log($event);
@@ -29,7 +45,9 @@ export class TripInputSectionComponent {
   }
 
   public submitQuery(): void {
-    this.onSubmitClicked.emit();
+    this.isLoading = true;
+    this.onSubmitClicked.emit(this.form.value);
+    this.form.reset();
   }
 
 }

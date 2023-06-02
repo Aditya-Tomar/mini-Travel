@@ -1,0 +1,19 @@
+<div mdbDropdown class="dropdown">
+    <button
+      class="btn btn-primary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      aria-expanded="false"
+      mdbDropdownToggle
+      (click)="toggle = !toggle"
+    >
+      {{ buttonName }}
+    </button>
+    <ul *ngIf="toggle" mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li *ngFor="let item of dropdownList" class="list-elem" 
+      [ngClass]="item.disable ? 'disable': 'not-disable'"
+      (click)="optionSelect(item)">
+        {{ item.name }}        
+      </li>
+    </ul>
+  </div>
