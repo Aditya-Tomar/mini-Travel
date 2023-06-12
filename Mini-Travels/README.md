@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
+## Prerequisites
+
+Your system should have npm and angular cli.
+
+## steps - To run at local
+
+1. In the project directory run "npm install" or "npm install --force".
+2. After the package installation run "ng serve".
+3. Your application is ready to run at your local.
+
+## Also check
+https://master--mini-travel.netlify.app/
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
